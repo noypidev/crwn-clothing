@@ -2,7 +2,7 @@ import React from 'react';
 
 import './custom-button.style.scss';
 
-const CustomButton = ({ children, whichProvider, ...otherButtonProps }) => {
+const CustomButton = ({ children, whichProvider, inverted, ...otherButtonProps }) => {
    var loginProvider;
 
    switch (whichProvider) {
@@ -15,7 +15,7 @@ const CustomButton = ({ children, whichProvider, ...otherButtonProps }) => {
 
    return (
       <button
-         className={`${loginProvider} custom-button`.trim()}
+         className={`${inverted ? 'inverted' : ''} ${loginProvider} custom-button`.trim()}
          {...otherButtonProps}
       >
          {children}
